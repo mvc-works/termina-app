@@ -1,0 +1,14 @@
+
+.app-monitor {
+    margin: 10px;
+    background-color: hsl(36, 100%, 60%);
+    padding: 10px;
+    color: white;
+    font-family: Ubuntu Mono, monospace;
+    font-size: 14px;
+}
+
+.app-monitor .stdout {
+    max-height: 200px;
+    overflow: auto;
+}

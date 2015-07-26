@@ -11,7 +11,10 @@
     display: flex;
     flex-direction: row;
     background-color: hsl(0, 0%, 82%);
-    padding: 0 10px;
+}
+
+.app-header > div {
+    padding: 0 0.5em;
 }
 
 .app-header > div {

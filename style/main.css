@@ -38,3 +38,7 @@ body, input, textarea {
   line-height: 2em;
   font-family: HelveticaNeue-Light;
 }
+
+.line > span + span {
+  margin-left: 0.5em;
+}

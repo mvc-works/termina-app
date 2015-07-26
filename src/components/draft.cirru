@@ -8,10 +8,6 @@ var
   input $ deku.element.bind null :input
 
 = module.exports $ {}
-  :propTypes $ {}
-    :store $ {}
-      :type :object
-
   :initialState $ \ ()
     {} (:text :)
 

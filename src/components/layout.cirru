@@ -18,16 +18,19 @@ var
     var store component.props.store
     var activeProcs $ ... store
       get :procs
-      filter $ \ (proc) (proc.get :active)
+      filter $ \ (proc) (proc.get :alive)
     var inactiveProcs $ ... store
       get :procs
-      filter $ \ (proc) (not (proc.get :active))
+      filter $ \ (proc) (not (proc.get :alive))
+      sortBy $ \ (proc)
+        var start $ new Date $ proc.get :start-time
+        - 0 (start.valueOf)
 
     div ({} (:class :app-layout))
       div ({} (:class :app-header))
         Directory $ {} (:store store)
+        Draft
         Command $ {} (:store store)
-        Draft $ {} (:store store)
       div ({} (:class :app-body))
         div ({} (:class :active-group))
           ... activeProcs (toArray)
