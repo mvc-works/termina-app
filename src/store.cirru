@@ -8,6 +8,6 @@ var
 
 var initial $ Immutable.Map
 
-= exports.out $ exports.in.reduce initial $ \ (store action)
-  var delta $ Immutable.fromJS action.data
+= exports.out $ exports.in.reduce initial $ \ (store diff)
+  var delta $ Immutable.fromJS diff
   return $ patch store delta

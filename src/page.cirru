@@ -3,11 +3,14 @@ var
   Immutable $ require :immutable
   deku $ require :deku
   Pipeline $ require :cumulo-pipeline
+  schema $ require :./schema
 
 = exports.in $ new Pipeline
 
 var
+  Layout $ deku.element.bind null $ require :./components/layout
   div $ deku.element.bind null :div
+  span $ deku.element.bind null :span
 
 var pageComponent $ {}
   :propTypes $ {}
@@ -15,11 +18,10 @@ var pageComponent $ {}
       :source :store
 
   :defaultProps $ {}
-    :store (Immutable.Map)
+    :store schema.store
 
   :render $ \ (component setState)
-    console.log component.props.store
-    div null :demo
+    Layout $ {} (:store component.props.store)
 
 var page $ deku.tree $ deku.element pageComponent
 

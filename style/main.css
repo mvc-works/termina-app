@@ -1,0 +1,40 @@
+
+@import url(command.css);
+@import url(directory.css);
+@import url(draft.css);
+@import url(history.css);
+@import url(monitor.css);
+@import url(layout.css);
+
+body {
+  margin: 0;
+}
+
+body * {
+  box-sizing: border-box;
+  /* box-shadow: 0 0 1px; */
+}
+
+.app-history .header {
+    padding: 0 1em;
+}
+
+.app-history .command {
+    font-family: Menlo;
+}
+
+.app-history .pid {
+    margin-right: 1em;
+}
+
+input {
+    outline: none;
+    border: none;
+    /* box-shadow: 0 0 1px black; */
+}
+
+body, input, textarea {
+  font-size: 16px;
+  line-height: 2em;
+  font-family: HelveticaNeue-Light;
+}

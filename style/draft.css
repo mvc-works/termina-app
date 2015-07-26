@@ -1,0 +1,8 @@
+
+.app-draft {}
+
+.app-draft > input {
+    flex: 1;
+    padding: 0 0.5em;
+    background-color: hsla(0, 100%, 100%, 0.39);
+}

@@ -12,6 +12,8 @@ var
         meta $ object (:charset :utf-8)
         link $ object (:rel :icon)
           :href :images/termina.png
+        link $ object (:rel :stylesheet)
+          :href :style/main.css
         script $ object (:src data.vendor) (:defer true)
         script $ object (:src data.main) (:defer true)
       body null
