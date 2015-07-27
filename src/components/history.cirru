@@ -1,25 +1,25 @@
 
 var
-  deku $ require :deku
+  React $ require :react
+  Immutable $ require :immutable
 
 var
-  div $ deku.element.bind null :div
-  pre $ deku.element.bind null :pre
-  span $ deku.element.bind null :span
+  div $ React.createFactory :div
+  pre $ React.createFactory :pre
+  span $ React.createFactory :span
 
-= module.exports $ {}
+= module.exports $ React.createClass $ {}
   :propTypes $ {}
-    :store $ {} (:type :object)
+    :proc $ React.PropTypes.instanceOf Immutable.Map
 
-  :render $ \ (component setState)
-    var proc component.props.proc
+  :render $ \ ()
+    var proc this.props.proc
 
-    div ({} (:class :app-history))
-      div ({} (:class :header))
-        span ({} (:class :pid)) (proc.get :pid)
-        span ({} (:class :command)) (proc.get :command)
-      pre ({} (:class :stdout))
+    div ({} (:className :app-history))
+      div ({} (:className :header))
+        span ({} (:className :pid)) (proc.get :pid)
+        span ({} (:className :command)) (proc.get :command)
+      pre ({} (:className :stdout))
         ... proc
           get :stdout
           join :
-

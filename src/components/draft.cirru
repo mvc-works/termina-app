@@ -1,29 +1,28 @@
 
 var
-  deku $ require :deku
+  React $ require :react
   view $ require :../view
 
 var
-  div $ deku.element.bind null :div
-  input $ deku.element.bind null :input
+  div $ React.createFactory :div
+  input $ React.createFactory :input
 
-= module.exports $ {}
-  :initialState $ \ ()
+= module.exports $ React.createClass $ {}
+  :getInitialState $ \ ()
     {} (:text :)
 
-  :render $ \ (component setState)
+  :onChange $ \ (event)
+    this.setState $ {} (:text event.target.value)
 
-    var
-      onInput $ \ (event)
-        setState $ {} (:text event.target.value)
-      onKeyDown $ \ (event)
-        if (is event.keyCode 13) $ do
-          view.action $ {} (:type :start) (:command component.state.text)
-          setState $ {} (:text :)
-        return undefined
+  :onKeyDown $ \ (event)
+    if (is event.keyCode 13) $ do
+      view.action $ {} (:type :start) (:command this.state.text)
+      this.setState $ {} (:text :)
+    return undefined
 
-    div ({} (:class :app-draft))
+  :render $ \ ()
+    div ({} (:className :app-draft))
       input $ {}
-        :onInput onInput
-        :onKeyDown onKeyDown
-        :value component.state.text
+        :onChange this.onChange
+        :onKeyDown this.onKeyDown
+        :value this.state.text

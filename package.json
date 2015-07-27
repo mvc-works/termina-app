@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "cumulo-pipeline": "0.0.3",
-    "deku": "^0.4.11",
     "immutable": "^3.7.4",
-    "immutablepatch": "^0.2.0"
+    "immutablepatch": "^0.2.0",
+    "react": "^0.13.3"
   },
   "repository": {
     "type": "git",

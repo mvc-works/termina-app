@@ -1,32 +1,35 @@
 
 var
   Immutable $ require :immutable
-  deku $ require :deku
+  React $ require :react
   Pipeline $ require :cumulo-pipeline
   schema $ require :./schema
 
 = exports.in $ new Pipeline
 
 var
-  Layout $ deku.element.bind null $ require :./components/layout
-  div $ deku.element.bind null :div
-  span $ deku.element.bind null :span
+  Layout $ React.createFactory $ require :./components/layout
+  div $ React.createFactory :div
+  span $ React.createFactory :span
 
-var pageComponent $ {}
+var pageComponent $ React.createClass $ {}
   :propTypes $ {}
-    :store $ {}
-      :source :store
+    :store $ React.PropTypes.instanceOf Immutable.Map
+
+  :getInitialState $ \ ()
+    {} (:store schema.store)
+
+  :componentWillMount $ \ ()
+    exports.in.for $ \\ (store)
+      console.log :new (store.toJS)
+      this.setState $ {} (:store store)
 
   :defaultProps $ {}
     :store schema.store
 
   :render $ \ (component setState)
-    Layout $ {} (:store component.props.store)
+    Layout $ {} (:store this.state.store)
 
-var page $ deku.tree $ deku.element pageComponent
+var Page $ React.createFactory pageComponent
 
-exports.in.for $ \ (store)
-  console.log :new (store.toJS)
-  page.set :store store
-
-deku.render page (document.querySelector :#app)
+React.render (Page) document.body

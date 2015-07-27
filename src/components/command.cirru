@@ -1,13 +1,14 @@
 
 var
-  deku $ require :deku
+  React $ require :react
+  Immutable $ require :immutable
 
 var
-  div $ deku.element.bind null :div
+  div $ React.createFactory :div
 
-= module.exports $ {}
+= module.exports $ React.createClass $ {}
   :propTypes $ {}
-    :store $ {} (:type :object)
+    :store $ React.PropTypes.instanceOf Immutable.Map
 
-  :render $ \ (component setState)
-    div ({} (:class :app-command)) :command
+  :render $ \ ()
+    div ({} (:className :app-command)) :command

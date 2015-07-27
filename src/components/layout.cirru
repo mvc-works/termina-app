@@ -1,21 +1,23 @@
 
 var
-  deku $ require :deku
+  React $ require :react
+  Immutable $ require :immutable
 
 var
-  Directory $ deku.element.bind null $ require :./directory
-  Draft $ deku.element.bind null $ require :./draft
-  Command $ deku.element.bind null $ require :./command
-  Monitor $ deku.element.bind null $ require :./monitor
-  History $ deku.element.bind null $ require :./history
-  div $ deku.element.bind null :div
+  Directory $ React.createFactory $ require :./directory
+  Draft $ React.createFactory $ require :./draft
+  Command $ React.createFactory $ require :./command
+  Monitor $ React.createFactory $ require :./monitor
+  History $ React.createFactory $ require :./history
+  div $ React.createFactory :div
 
-= module.exports $ {}
+= module.exports $ React.createClass $ {}
   :propTypes $ {}
-    :store $ {} (:type :object)
+    :store $ React.PropTypes.instanceOf Immutable.Map
 
-  :render $ \ (component setState)
-    var store component.props.store
+  :render $ \ ()
+    var store this.props.store
+
     var activeProcs $ ... store
       get :procs
       filter $ \ (proc) (proc.get :alive)
@@ -26,17 +28,17 @@ var
         var start $ new Date $ proc.get :start-time
         - 0 (start.valueOf)
 
-    div ({} (:class :app-layout))
-      div ({} (:class :app-header))
+    div ({} (:className :app-layout))
+      div ({} (:className :app-header))
         Directory $ {} (:store store)
         Draft
         Command $ {} (:store store)
-      div ({} (:class :app-body))
-        div ({} (:class :active-group))
+      div ({} (:className :app-body))
+        div ({} (:className :active-group))
           ... activeProcs (toArray)
             map $ \ (proc)
               Monitor $ {} (:proc proc) (:key (proc.get :pid))
-        div ({} (:class :inactive-group))
+        div ({} (:className :inactive-group))
           ... inactiveProcs (toArray)
             map $ \ (proc)
               History $ {} (:proc proc) (:key (proc.get :pid))
