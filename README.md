@@ -1,25 +1,8 @@
 
-Workflow based on Webpack & CirruScript
+Termina is a Web GUI for a termial
 ----
 
-Scaffold for personal projects.
-
-### Bash Alias
-
-```bash
-# webpack-workflow
-export wf=/Users/chen/repo/mvc-works/webpack-workflow/
-alias workflow="
-cp $wf/gulpfile.* .;
-cp $wf/package.json .;
-cp $wf/webpack.* .;
-cp $wf/template.cirru .;
-cp $wf/README.md .;
-mkdir src/;
-touch src/main.cirru;
-git init;
-"
-```
+Work with termina-server.
 
 ### Usage
 

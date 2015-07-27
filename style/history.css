@@ -2,10 +2,10 @@
 .app-history {
     background-color: hsl(0, 0%, 96%);
     margin: 10px;
+    font-family: Ubuntu Mono;
 }
 
 .app-history .stdout {
-    font-family: Menlo;
     font-size: 14px;
     line-height: 1.6em;
     margin: 0;
