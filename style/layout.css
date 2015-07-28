@@ -14,7 +14,6 @@
 }
 
 .app-header > div {
-    padding: 0 0.5em;
 }
 
 .app-header > div {
@@ -35,4 +34,21 @@
 .inactive-group {
     flex: 1;
     overflow: auto;
+    padding: 100px 0 200px;
+}
+
+.inactive-group .board {
+    height: 32px;
+    padding: 0 10px;
+    display: flex;
+}
+
+.inactive-group .board .space {
+    flex: 1;
+}
+
+.inactive-group .board .clear {
+    width: 32px;
+    background-color: hsl(0, 89%, 77%);
+    cursor: pointer;
 }

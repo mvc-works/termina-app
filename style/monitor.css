@@ -1,14 +1,38 @@
 
 .app-monitor {
     margin: 10px;
-    background-color: hsl(36, 100%, 60%);
-    padding: 10px;
+    background-color: hsl(0, 0%, 49%);
     color: white;
     font-family: Ubuntu Mono, monospace;
     font-size: 14px;
 }
 
-.app-monitor .stdout {
+.app-monitor.is-alive {
+    background-color: hsl(98, 54%, 63%);
+}
+
+.app-monitor > .stdout {
     max-height: 200px;
-    overflow: auto;
+    overflow: hidden;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.app-monitor .header {
+    display: flex;
+    flex-direction: row;
+}
+
+.app-monitor .header .info {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.app-monitor .header .control {
+    height: 32px;
+}
+
+.app-monitor .header .trigger {
+    fill: hsl(0, 100%, 50%);
+    cursor: pointer;
 }

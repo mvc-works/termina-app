@@ -2,18 +2,22 @@
 var
   React $ require :react
   Immutable $ require :immutable
+  view $ require :../view
 
 var
   Directory $ React.createFactory $ require :./directory
   Draft $ React.createFactory $ require :./draft
   Command $ React.createFactory $ require :./command
   Monitor $ React.createFactory $ require :./monitor
-  History $ React.createFactory $ require :./history
   div $ React.createFactory :div
 
 = module.exports $ React.createClass $ {}
   :propTypes $ {}
     :store $ React.PropTypes.instanceOf Immutable.Map
+
+  :onClearClick $ \ (event)
+    view.action $ {}
+      :type :clear
 
   :render $ \ ()
     var store this.props.store
@@ -30,15 +34,19 @@ var
 
     div ({} (:className :app-layout))
       div ({} (:className :app-header))
-        Directory $ {} (:store store)
-        Draft
-        Command $ {} (:store store)
+        Directory $ {}
+          :options (store.get :directories)
+          :defaultDir $ store.get :cwd
+        Command $ {} (:options (store.get :commands))
       div ({} (:className :app-body))
         div ({} (:className :active-group))
           ... activeProcs (toArray)
             map $ \ (proc)
               Monitor $ {} (:proc proc) (:key (proc.get :pid))
         div ({} (:className :inactive-group))
+          div ({} (:className :board))
+            div ({} (:className :space))
+            div ({} (:className :clear) (:onClick this.onClearClick))
           ... inactiveProcs (toArray)
             map $ \ (proc)
-              History $ {} (:proc proc) (:key (proc.get :pid))
+              Monitor $ {} (:proc proc) (:key (proc.get :pid))

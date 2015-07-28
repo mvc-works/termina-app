@@ -5,3 +5,6 @@ var
 = exports.store $ Immutable.fromJS $ {}
   :procs $ []
   :users $ []
+  :directries $ {}
+  :commands $ {}
+  :cwd :

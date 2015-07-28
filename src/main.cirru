@@ -5,8 +5,11 @@ var
   page $ require :./page
   websocket $ require :./websocket
 
+require :react-origami-complete/src/complete.css
+require :react-origami-lightbox/src/lightbox.css
+
 websocket.setup $ {}
-  :port 3000
+  :port 4001
 
 websocket.out.forward store.in
 store.out.forward page.in

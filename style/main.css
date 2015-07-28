@@ -2,8 +2,8 @@
 @import url(command.css);
 @import url(directory.css);
 @import url(draft.css);
-@import url(history.css);
 @import url(monitor.css);
+@import url(display.css);
 @import url(layout.css);
 
 body {
@@ -41,4 +41,9 @@ body, input, textarea {
 
 .line > span + span {
   margin-left: 0.5em;
+}
+
+.origami-complete,
+.origami-complete input {
+    font-family: Ubuntu Mono, monospace;
 }

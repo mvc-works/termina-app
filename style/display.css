@@ -1,0 +1,12 @@
+
+.app-display {
+    color: hsl(0, 0%, 0%);
+    height: 100%;
+    overflow: auto;
+}
+
+.app-display .command {}
+
+.app-display .stdout {
+    line-height: 1.6em;
+}
