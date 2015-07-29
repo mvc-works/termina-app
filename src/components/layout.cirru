@@ -9,6 +9,8 @@ var
   Command $ React.createFactory $ require :./command
   Monitor $ React.createFactory $ require :./monitor
   div $ React.createFactory :div
+  svg $ React.createFactory :svg
+  polygon $ React.createFactory :polygon
 
 = module.exports $ React.createClass $ {}
   :mixins $ [] React.addons.PureRenderMixin
@@ -33,20 +35,23 @@ var
         - 0 (start.valueOf)
 
     div ({} (:className :app-layout))
-      div ({} (:className :app-header))
-        Directory $ {}
-          :options (store.get :directories)
-          :defaultDir $ store.get :cwd
-        Command $ {} (:options (store.get :commands))
-      div ({} (:className :app-body))
-        div ({} (:className :active-group))
+      div ({} (:className :active-group))
+        div ({} (:className :app-header))
+          Directory $ {}
+            :options (store.get :directories)
+            :cwd $ store.get :cwd
+        div ({} (:className :app-body))
           ... activeProcs (toArray)
             map $ \ (proc)
               Monitor $ {} (:proc proc) (:key (proc.get :pid))
-        div ({} (:className :inactive-group))
-          div ({} (:className :board))
-            div ({} (:className :space))
-            div ({} (:className :clear) (:onClick this.onClearClick))
+      div ({} (:className :inactive-group))
+        div ({} (:className :app-header))
+          Command $ {} (:options (store.get :commands))
+          svg ({} (:className :clear))
+            polygon $ {} (:className :trigger)
+              :onClick this.onClearClick
+              :points ":0,0 32,32 0,32"
+        div ({} (:className :app-body))
           ... inactiveProcs (toArray)
             map $ \ (proc)
               Monitor $ {} (:proc proc) (:key (proc.get :pid))

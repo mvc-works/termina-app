@@ -47,3 +47,14 @@ body, input, textarea {
 .origami-complete input {
     font-family: Ubuntu Mono, monospace;
 }
+
+.app-layout .origami-complete .complete-menu {
+    background-color: hsl(0, 0%, 24%);
+    color: white;
+}
+
+.app-layout .origami-complete .complete-item {}
+.app-layout .origami-complete .complete-item.is-selected,
+.app-layout .origami-complete .complete-item:hover {
+    background-color: hsl(0, 0%, 31%);
+}

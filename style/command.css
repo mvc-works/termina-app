@@ -1,5 +1,7 @@
 
-.app-command {}
+.app-command {
+    flex: 1;
+}
 
 .app-command .origami-complete {
     width: 100%;

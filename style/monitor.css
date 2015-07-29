@@ -1,25 +1,32 @@
 
 .app-monitor {
-    margin: 10px;
-    background-color: hsl(0, 0%, 49%);
-    color: white;
+    background-color: hsl(0, 0%, 13%);
+    color: hsl(205, 100%, 93%);
     font-family: Ubuntu Mono, monospace;
     font-size: 14px;
+    margin-top: 20px;
+}
+
+.app-monitor pre {
+    font-family: Menlo;
+    line-height: 2em;
+    font-size: 12px;
+    margin: 0;
+    padding: 10px 0;
 }
 
 .app-monitor.is-alive {
-    background-color: hsl(98, 54%, 63%);
 }
 
 .app-monitor > .stdout {
     overflow: hidden;
-    padding: 0 10px;
-    line-height: 1.6em;
+    padding: 10px 10px;
 }
 
 .app-monitor .header {
     display: flex;
     flex-direction: row;
+    background-color: hsl(0, 0%, 28%);
 }
 
 .app-monitor .header .info {
@@ -32,7 +39,7 @@
 }
 
 .app-monitor .header .trigger {
-    fill: hsl(0, 100%, 50%);
+    fill: hsl(30, 65%, 60%);
     cursor: pointer;
 }
 
@@ -40,8 +47,13 @@
     padding: 0 10px;
     cursor: pointer;
     overflow: hidden;
+    line-height: 1.6em;
+    font-family: Menlo;
 }
 
 .app-monitor .rich-stdout .more {
-    color: hsl(216, 4%, 70%);
+    color: hsl(189, 100%, 61%);
+    background-color: hsla(93, 11%, 57%, 0.54);
+    height: 6px;
+    margin: 10px -10px;
 }

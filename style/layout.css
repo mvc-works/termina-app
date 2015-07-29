@@ -1,54 +1,52 @@
 
 .app-layout {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: absolute;
     width: 100%;
     height: 100%;
+    background-color: hsl(0, 0%, 0%);
 }
 
 .app-header {
     display: flex;
     flex-direction: row;
-    background-color: hsl(0, 0%, 82%);
+    background-color: hsl(0, 0%, 0%);
+}
+
+.app-header input {
+    background-color: hsl(0, 0%, 24%);
+    color: white;
 }
 
 .app-header > div {
 }
 
 .app-header > div {
-    flex: 1;
     display: flex;
 }
 
 .app-body {
-    display: flex;
-    flex-direction: row;
     flex: 1;
 }
 
 .active-group {
     flex: 1;
-    overflow: auto;
+    padding: 140px 0 400px;
 }
 .inactive-group {
     flex: 1;
-    overflow: auto;
-    padding: 100px 0 200px;
+    margin-left: 20px;
+    padding: 140px 0 400px;
 }
 
-.inactive-group .board {
-    height: 32px;
-    padding: 0 10px;
-    display: flex;
-}
-
-.inactive-group .board .space {
-    flex: 1;
-}
-
-.inactive-group .board .clear {
+.app-header .clear {
     width: 32px;
-    background-color: hsl(0, 89%, 77%);
     cursor: pointer;
+    height: 32px;
+    margin-left: 20px;
+}
+
+.app-header .clear .trigger {
+    fill: hsl(30, 66%, 60%);
 }

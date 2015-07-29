@@ -14,25 +14,16 @@ var
 
   :propTypes $ {}
     :options $ React.PropTypes.instanceOf Immutable.Map
-    :defaultDir React.PropTypes.string.isRequired
-
-  :getInitialState $ \ ()
-    {} (:text this.props.defaultDir)
-
-  :onChange $ \ (data)
-    this.setState $ {} (:text data)
+    :cwd React.PropTypes.string.isRequired
 
   :onSubmit $ \ (data)
     view.action $ {}
       :type :chdir
       :data data
-    this.setState $ {} (:text data)
 
   :render $ \ ()
     div ({} (:className :app-directory))
       Complete $ {}
         :options this.props.options
-        :value this.state.text
-        :onChange this.onChange
         :onSubmit this.onSubmit
-        :placeholder this.props.defaultDir
+        :placeholder this.props.cwd

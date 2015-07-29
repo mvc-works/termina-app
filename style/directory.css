@@ -1,5 +1,7 @@
 
-.app-directory {}
+.app-directory {
+    flex: 1;
+}
 
 .app-directory .origami-complete {
     width: 100%;

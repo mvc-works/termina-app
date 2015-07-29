@@ -47,7 +47,7 @@ var
         var lastLines $ lines.slice -6
         return $ div ({} (:className :rich-stdout) (:onClick this.onPopShow))
           pre ({} (:className :stdout)) (firstLines.join ":\n")
-          div ({} (:className :more)) :More
+          div ({} (:className :more))
           pre ({} (:className :stdout)) (lastLines.join ":\n")
       do
         return $ pre ({} (:className :stdout)) (lines.join ":\n")

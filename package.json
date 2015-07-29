@@ -14,12 +14,14 @@
   "devDependencies": {
     "cirru-script": "^0.2.3",
     "cirru-script-loader": "0.1.0",
+    "css-loader": "^0.15.6",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-cirru-script": "^0.1.1",
     "rsyncwrapper": "^0.4.2",
     "run-sequence": "^1.0.2",
     "stir-template": "^0.1.4",
+    "style-loader": "^0.12.3",
     "webpack": "^1.8.5",
     "webpack-dev-server": "^1.8.0"
   },
@@ -29,7 +31,7 @@
     "immutable": "^3.7.4",
     "immutablepatch": "^0.2.0",
     "react": "^0.13.3",
-    "react-origami-complete": "^0.0.2",
+    "react-origami-complete": "0.0.4",
     "react-origami-lightbox": "0.0.1"
   },
   "repository": {
