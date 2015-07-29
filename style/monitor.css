@@ -12,10 +12,9 @@
 }
 
 .app-monitor > .stdout {
-    max-height: 200px;
     overflow: hidden;
     padding: 0 10px;
-    cursor: pointer;
+    line-height: 1.6em;
 }
 
 .app-monitor .header {
@@ -35,4 +34,14 @@
 .app-monitor .header .trigger {
     fill: hsl(0, 100%, 50%);
     cursor: pointer;
+}
+
+.app-monitor .rich-stdout {
+    padding: 0 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.app-monitor .rich-stdout .more {
+    color: hsl(216, 4%, 70%);
 }

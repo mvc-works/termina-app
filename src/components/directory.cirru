@@ -1,6 +1,6 @@
 
 var
-  React $ require :react
+  React $ require :react/addons
   Immutable $ require :immutable
   view $ require :../view
 
@@ -9,6 +9,7 @@ var
   div $ React.createFactory :div
 
 = module.exports $ React.createClass $ {}
+  :mixins $ [] React.addons.PureRenderMixin
   :displayName :app-directory
 
   :propTypes $ {}

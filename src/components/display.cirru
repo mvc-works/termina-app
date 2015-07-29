@@ -1,6 +1,6 @@
 
 var
-  React $ require :react
+  React $ require :react/addons
   Immutable $ require :immutable
 
 var
@@ -8,6 +8,7 @@ var
   pre $ React.createFactory :pre
 
 = module.exports $ React.createClass $ {}
+  :mixins $ [] React.addons.PureRenderMixin
   :displayName :app-display
 
   :propTypes $ {}

@@ -1,6 +1,6 @@
 
 var
-  React $ require :react
+  React $ require :react/addons
   Immutable $ require :immutable
   classnames $ require :classnames
   view $ require :../view
@@ -15,6 +15,7 @@ var
   polygon $ React.createFactory :polygon
 
 = module.exports $ React.createClass $ {}
+  :mixins $ [] React.addons.PureRenderMixin
   :propTypes $ {}
     :proc $ React.PropTypes.instanceOf Immutable.Map
 
@@ -37,6 +38,21 @@ var
       {} (:show this.state.showPop) (:onClose this.onPopClose)
       Display $ {} (:proc this.props.proc)
 
+  :renderStdout $ \ ()
+    var stdout $ ... this.props.proc (get :stdout) (join :)
+    var lines $ stdout.split ":\n"
+    if (> lines.length 10)
+      do
+        var firstLines $ lines.slice 0 3
+        var lastLines $ lines.slice -6
+        return $ div ({} (:className :rich-stdout) (:onClick this.onPopShow))
+          pre ({} (:className :stdout)) (firstLines.join ":\n")
+          div ({} (:className :more)) :More
+          pre ({} (:className :stdout)) (lastLines.join ":\n")
+      do
+        return $ pre ({} (:className :stdout)) (lines.join ":\n")
+    return undefined
+
   :render $ \ ()
     var proc this.props.proc
     var className $ classnames :app-monitor $ {}
@@ -45,7 +61,6 @@ var
     div ({} $ :className className)
       div ({} (:className :header))
         div ({} (:className ":info line"))
-          span ({} (:className :pid)) (proc.get :pid)
           span ({} (:className :command)) (proc.get :command)
         cond (proc.get :alive)
           div ({} (:className :control))
@@ -55,8 +70,5 @@ var
                 :points ":0,0 32,0 32,32"
                 :onClick this.onClose
           , undefined
-      pre ({} (:className :stdout) (:onClick this.onPopShow))
-        ... proc
-          get :stdout
-          join :
-      cond this.state.showPop (this.renderPop) undefined
+      this.renderStdout
+      this.renderPop

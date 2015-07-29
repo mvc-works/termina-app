@@ -1,17 +1,17 @@
 
 var
-  React $ require :react
+  React $ require :react/addons
   Immutable $ require :immutable
   view $ require :../view
 
 var
   Directory $ React.createFactory $ require :./directory
-  Draft $ React.createFactory $ require :./draft
   Command $ React.createFactory $ require :./command
   Monitor $ React.createFactory $ require :./monitor
   div $ React.createFactory :div
 
 = module.exports $ React.createClass $ {}
+  :mixins $ [] React.addons.PureRenderMixin
   :propTypes $ {}
     :store $ React.PropTypes.instanceOf Immutable.Map
 
