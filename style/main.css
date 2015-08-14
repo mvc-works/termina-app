@@ -8,6 +8,7 @@
 
 body {
   margin: 0;
+  background-color: hsl(142, 63%, 88%);
 }
 
 body * {
@@ -49,12 +50,16 @@ body, input, textarea {
 }
 
 .app-layout .origami-complete .complete-menu {
-    background-color: hsl(0, 0%, 24%);
-    color: white;
+    background-color: hsl(142, 63%, 97%);
+    color: hsl(142, 30%, 50%);
 }
 
 .app-layout .origami-complete .complete-item {}
 .app-layout .origami-complete .complete-item.is-selected,
 .app-layout .origami-complete .complete-item:hover {
-    background-color: hsl(0, 0%, 31%);
+    background-color: hsl(142, 63%, 88%);
+}
+
+.react-origami-lightbox .lightbox-backdrop {
+  z-index: 100;
 }

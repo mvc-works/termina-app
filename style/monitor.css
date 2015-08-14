@@ -1,10 +1,11 @@
 
 .app-monitor {
-    background-color: hsl(0, 0%, 13%);
-    color: hsl(205, 100%, 93%);
+    background-color: hsl(142, 63%, 88%);
+    color: hsl(205, 11%, 56%);
     font-family: Ubuntu Mono, monospace;
     font-size: 14px;
     margin-top: 20px;
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
 }
 
 .app-monitor pre {
@@ -26,7 +27,7 @@
 .app-monitor .header {
     display: flex;
     flex-direction: row;
-    background-color: hsl(0, 0%, 28%);
+    color: hsl(189, 3%, 25%);
 }
 
 .app-monitor .header .info {
