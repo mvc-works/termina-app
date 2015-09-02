@@ -1,17 +1,16 @@
 
 .app-monitor {
-    background-color: hsl(142, 63%, 88%);
-    color: hsl(205, 11%, 56%);
-    font-family: Ubuntu Mono, monospace;
+    background-color: hsla(240, 90%, 10%, 0.3);
+    color: hsl(205, 100%, 100%);
+    font-family: Ubuntu Mono, Consolas, MicroSoft Yahei, monospace;
     font-size: 14px;
     margin-top: 20px;
     border: 1px solid hsla(0, 0%, 0%, 0.1);
 }
 
 .app-monitor pre {
-    font-family: Menlo;
-    line-height: 2em;
-    font-size: 12px;
+    line-height: 1.8em;
+    font-size: 14px;
     margin: 0;
     padding: 10px 0;
 }
@@ -27,7 +26,7 @@
 .app-monitor .header {
     display: flex;
     flex-direction: row;
-    color: hsl(189, 3%, 25%);
+    color: hsl(189, 3%, 100%);
 }
 
 .app-monitor .header .info {
@@ -49,12 +48,11 @@
     cursor: pointer;
     overflow: hidden;
     line-height: 1.6em;
-    font-family: Menlo;
+    font-family: Menlo, Consolas, MicroSoft Yahei, monospace;
 }
 
 .app-monitor .rich-stdout .more {
-    color: hsl(189, 100%, 61%);
-    background-color: hsla(93, 11%, 57%, 0.54);
-    height: 6px;
-    margin: 10px -10px;
+    background-color: hsla(93, 11%, 70%, 0.3);
+    height: 10px;
+    margin: 0px -10px;
 }

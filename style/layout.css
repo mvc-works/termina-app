@@ -2,8 +2,12 @@
 .app-layout {
     display: flex;
     flex-direction: row;
-    background-color: hsl(142, 63%, 88%);
-    padding: 0 20px;
+    /* background-color: hsl(142, 63%, 88%); */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    align-items: stretch;
 }
 
 .app-header {
@@ -12,7 +16,7 @@
 }
 
 .app-header input {
-    color: white;
+    color: hsl(0, 0%, 51%);
 }
 
 .app-header > div {
@@ -24,16 +28,16 @@
 
 .app-body {
     flex: 1;
+    padding-bottom: 400px;
 }
 
 .active-group {
     flex: 1;
-    padding: 80px 0 400px;
+    padding: 80px 10px 400px 20px;
 }
 .inactive-group {
     flex: 1;
-    margin-left: 20px;
-    padding: 80px 0 400px;
+    padding: 80px 10px 400px 20px;
 }
 
 .app-header .clear {

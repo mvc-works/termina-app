@@ -4,13 +4,13 @@
     height: 100%;
     overflow: auto;
     padding: 100px 0 400px;
-    font-family: Menlo;
+    font-family: Menlo, Consolas, MicroSoft Yahei, monospace;
 }
 
 .app-display .command {}
 
 .app-display .stdout {
-    line-height: 2em;
-    font-family: Menlo;
-    font-size: 12px;
+    line-height: 1.8em;
+    font-family: Menlo, Consolas, MicroSoft Yahei, monospace;
+    font-size: 14px;
 }

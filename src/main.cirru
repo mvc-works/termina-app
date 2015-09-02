@@ -7,6 +7,7 @@ var
 
 require :react-origami-complete/src/complete.css
 require :react-origami-lightbox/src/lightbox.css
+require :../style/main.css
 
 websocket.setup $ {}
   :port 4001

@@ -8,7 +8,9 @@
 
 body {
   margin: 0;
-  background-color: hsl(142, 63%, 88%);
+  background-color: hsl(190, 86%, 33%);
+  background-image: url(../images/circuit-wallpaper.jpg);
+  background-attachment: fixed;
 }
 
 body * {
@@ -21,7 +23,7 @@ body * {
 }
 
 .app-history .command {
-    font-family: Menlo;
+    font-family: Menlo, Consolas, MicroSoft Yahei, monospace;
 }
 
 .app-history .pid {
@@ -34,10 +36,14 @@ input {
     /* box-shadow: 0 0 1px black; */
 }
 
+::-webkit-input-placeholder {
+  color: hsla(0,90%,100%,0.6);
+}
+
 body, input, textarea {
   font-size: 16px;
   line-height: 2em;
-  font-family: HelveticaNeue-Light;
+  background-size: cover;
 }
 
 .line > span + span {
@@ -46,18 +52,22 @@ body, input, textarea {
 
 .origami-complete,
 .origami-complete input {
-    font-family: Ubuntu Mono, monospace;
+    font-family: Ubuntu Mono, Consolas, MicroSoft Yahei, monospace;
+    background-color: hsla(240, 80%, 20%, 0.2);
+    color: white;
 }
 
 .app-layout .origami-complete .complete-menu {
-    background-color: hsl(142, 63%, 97%);
-    color: hsl(142, 30%, 50%);
+    background-color: hsla(240, 60%, 20%, 0.6);
+    color: white;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 .app-layout .origami-complete .complete-item {}
 .app-layout .origami-complete .complete-item.is-selected,
 .app-layout .origami-complete .complete-item:hover {
-    background-color: hsl(142, 63%, 88%);
+    background-color: hsla(240, 40%, 60%, 0.6);
 }
 
 .react-origami-lightbox .lightbox-backdrop {

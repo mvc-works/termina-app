@@ -6,7 +6,7 @@ var
 = exports.out $ new Pipeline
 
 = exports.setup $ \ (options)
-  var ws $ new WebSocket $ + ":ws://localhost:" options.port
+  var ws $ new WebSocket $ + ":ws://192.168.0.129:" options.port
 
   = ws.onmessage $ \ (event)
     var data $ JSON.parse event.data
