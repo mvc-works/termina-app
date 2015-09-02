@@ -27,6 +27,16 @@ var
       :type :stop
       :data $ this.props.proc.get :pid
 
+  :onFlush $ \ (event)
+    view.action $ {}
+      :type :flush
+      :data $ this.props.proc.get :pid
+
+  :onRedo $ \ (event)
+    view.action $ {}
+      :type :start
+      :data $ this.props.proc.get :command
+
   :onPopClose $ \ ()
     this.setState $ {} (:showPop false)
 
@@ -71,4 +81,12 @@ var
                 :onClick this.onClose
           , undefined
       this.renderStdout
+      div ({} (:className ":line monitor-control"))
+        cond (proc.get :alive)
+          div
+            {} (:className ":button is-attract") (:onClick this.onFlush)
+            , :flush
+          div
+            {} (:className ":button is-attract") (:onClick this.onRedo)
+            , :Redo
       this.renderPop

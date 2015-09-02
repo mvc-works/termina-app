@@ -56,3 +56,7 @@
     height: 10px;
     margin: 0px -10px;
 }
+
+.app-monitor .monitor-control {
+    padding: 10px 10px;
+}

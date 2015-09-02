@@ -4,6 +4,7 @@ var
   Immutable $ require :immutable
 
 var
+  Bottoming $ React.createFactory $ require :react-origami-bottoming
   div $ React.createFactory :div
   pre $ React.createFactory :pre
 
@@ -15,8 +16,9 @@ var
     :proc $ React.PropTypes.instanceOf Immutable.Map
 
   :render $ \ ()
-    div ({} (:className :app-display))
-      div ({} (:className :command))
-        this.props.proc.get :command
-      pre ({} (:className :stdout))
-        this.props.proc.get :stdout
+    Bottoming null
+      div ({} (:className :app-display))
+        div ({} (:className :command))
+          this.props.proc.get :command
+        pre ({} (:className :stdout))
+          this.props.proc.get :stdout

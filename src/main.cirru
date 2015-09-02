@@ -5,6 +5,7 @@ var
   page $ require :./page
   websocket $ require :./websocket
 
+require :origami-ui
 require :react-origami-complete/src/complete.css
 require :react-origami-lightbox/src/lightbox.css
 require :../style/main.css
