@@ -5,8 +5,8 @@ var
   exec $ . (require :child_process) :exec
   env $ object
     :dev true
-    :main :http://192.168.0.129:8080/build/main.js
-    :vendor :http://192.168.0.129:8080/build/vendor.js
+    :main :http://repo.cumulo.org:8080/build/main.js
+    :vendor :http://repo.cumulo.org:8080/build/vendor.js
 
 gulp.task :rsync $ \ (cb)
   var

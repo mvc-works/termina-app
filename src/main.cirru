@@ -11,11 +11,11 @@ require :react-origami-lightbox/src/lightbox.css
 require :../style/main.css
 
 websocket.setup $ {}
-  :port 4001
+  :port 4006
 
 websocket.out.forward store.in
 store.out.forward page.in
 view.out.forward websocket.in
 
 store.out.for $ \ (store)
-  console.log (store.toJS)
+  -- console.log (store.toJS)

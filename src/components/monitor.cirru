@@ -53,10 +53,8 @@ var
     var lines $ stdout.split ":\n"
     if (> lines.length 10)
       do
-        var firstLines $ lines.slice 0 3
         var lastLines $ lines.slice -6
         return $ div ({} (:className :rich-stdout) (:onClick this.onPopShow))
-          pre ({} (:className :stdout)) (firstLines.join ":\n")
           div ({} (:className :more))
           pre ({} (:className :stdout)) (lastLines.join ":\n")
       do

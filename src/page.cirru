@@ -21,7 +21,7 @@ var pageComponent $ React.createClass $ {}
 
   :componentWillMount $ \ ()
     exports.in.for $ \\ (store)
-      console.log :new (store.toJS)
+      -- console.log :new (store.toJS)
       this.setState $ {} (:store store)
 
   :defaultProps $ {}

@@ -9,10 +9,10 @@
 }
 
 .app-monitor pre {
-    line-height: 1.8em;
+    line-height: 1.6em;
     font-size: 14px;
     margin: 0;
-    padding: 10px 0;
+    padding: 0px 0;
 }
 
 .app-monitor.is-alive {
