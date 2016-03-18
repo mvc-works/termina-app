@@ -37,7 +37,8 @@
     "immutablepatch": "^0.2.0",
     "react": "^0.13.3",
     "react-origami-complete": "0.0.4",
-    "react-origami-lightbox": "0.0.1"
+    "react-origami-lightbox": "0.0.1",
+    "url-parse": "^1.0.5"
   },
   "repository": {
     "type": "git",

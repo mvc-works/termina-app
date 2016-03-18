@@ -6,7 +6,7 @@ var
 = exports.out $ new Pipeline
 
 = exports.setup $ \ (options)
-  var ws $ new WebSocket $ + ":ws://repo.cumulo.org:" options.port
+  var ws $ new WebSocket $ + ":ws://" options.domain :: options.port
 
   = ws.onmessage $ \ (event)
     var data $ JSON.parse event.data
